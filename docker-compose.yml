@@ -1,13 +1,8 @@
 version: '3'
 services:
-  jenkins-service:
-    image: 'myjenkins-blueocean:2.414.2'
-    restart: 'always'
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "8080:8080"
-
-  flask:
-    build: .
-    restart: 'always'
-    ports:
-      - "8081:5000"
+      - '80:80'
