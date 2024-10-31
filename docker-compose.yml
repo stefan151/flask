@@ -1,0 +1,13 @@
+version: '3'
+services:
+  jenkins-service:
+    image: 'myjenkins-blueocean:2.414.2'
+    restart: 'always'
+    ports:
+      - "8080:8080"
+
+  flask:
+    build: .
+    restart: 'always'
+    ports:
+      - "8081:5000"
